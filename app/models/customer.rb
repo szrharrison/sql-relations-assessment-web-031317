@@ -24,8 +24,3 @@ class Customer
     self.class.db.execute(sql, self.id)
   end
 end
-
-
-# customer = Customer.all.first
-# id = 1
-# customer.restaurants

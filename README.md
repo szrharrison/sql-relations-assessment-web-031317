@@ -25,7 +25,34 @@ Here, we have a different Yelp-style application. We need customers, restaurants
 
     ### author
     id | name |
-2. As a second step, please fill in the stubbed out methods in the respective model.
+
+2. As a second step, please fill in the stubbed out methods in the respective model. The important thing here is to know what SQL will fire to select the data you're looking for. For example, if I want a method called 'author' for my `Book` class, it might look something like this.
+
+```ruby
+class Book
+  include Databaseable::InstanceMethods # Access to our database
+  extend Databaseable::ClassMethods
+
+  ATTRIBUTES = {
+    id: "INTEGER PRIMARY KEY",
+    title: "TEXT",
+    release_year: "INTEGER"
+   }
+
+  attr_accessor(*self.public_attributes)
+  attr_reader :id
+
+  def author
+    sql = <<-SQL
+    SELECT * FROM authors
+    WHERE id = ?
+    SQL
+    self.class.db.execute(sql, self.author_id)
+  end
+
+end
+
+```
   - Customer#reviews
     - returns all of the reviews written by that customer
   - Owner#restaurants
@@ -42,8 +69,7 @@ Here, we have a different Yelp-style application. We need customers, restaurants
   - The data always lives on the belongs_to relationship
   - Do the belongs_to first, then do the has_many
   - If there is a many to many, we need a third table
-  - We've provided you with a `console.rb` file and a `seeds.rb` file. You can run `ruby tools/seeds.rb` to add some data to your database, and then `ruby tools/console.rb` to interact with your Ruby classes. 
+  - We've provided you with a `console.rb` file and a `seeds.rb` file. You can run `ruby tools/seeds.rb` to add some data to your database, and then `ruby tools/console.rb` to interact with your Ruby classes.
 
-```
+
 #### Write your domain model here:
-```
