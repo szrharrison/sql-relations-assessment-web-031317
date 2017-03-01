@@ -12,7 +12,7 @@ Here, we have a different Yelp-style application. We need customers, restaurants
 + SQL `Select` statements
 + SQL Joins
 
-### Instructions
+### Deliverables
 
 1. As a first step, please write out the domain model in this file
    + What we are concerned about is which tables have foreign keys
@@ -39,9 +39,8 @@ Here, we have a different Yelp-style application. We need customers, restaurants
 
 
 #### Hints:
-  - The data always lives on the belongs to relationship
-  - Do the belongs_to first
-  - Then do the has_many
+  - The data always lives on the belongs_to relationship
+  - Do the belongs_to first, then do the has_many
   - If there is a many to many, we need a third table
 
 ```
