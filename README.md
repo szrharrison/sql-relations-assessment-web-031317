@@ -1,13 +1,13 @@
 # SQL Assessment
 
-For this assessment, pretend we now we have a totally different website then from object relations section.
-Please don't base your answers on your ruby work.
+For this assessment, pretend we now have a totally different website from the object relations section.
+Please don't base your answers on your Ruby work.
 
 Here, we have a different Yelp-style application. We need customers, restaurants, owners, and reviews.  How do they link up?
 
 ## Topics / Objectives
 
-+ Domain modelling
++ Domain modeling
 + has_many / belongs_to relationships
 + SQL `Select` statements
 + SQL Joins
