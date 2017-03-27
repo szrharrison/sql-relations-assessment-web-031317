@@ -6,4 +6,4 @@ gem 'pry-byebug'
 gem 'require_all'
 gem 'sqlite3'
 gem 'rspec'
-gem  "faker"
+gem 'faker'

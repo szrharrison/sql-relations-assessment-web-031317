@@ -73,3 +73,23 @@ end
 
 
 #### Write your domain model here:
+  ##### Customers  
+  | id      | name | birth_year | hometown |
+  |:-------:|:----:|:----------:|:--------:|
+  | INTEGER | TEXT | DATETIME   | TEXT     |
+
+  ##### Restaurants  
+  | id      | name | location | owner_id <sup>†</sup> |
+  |:-------:|:----:|:--------:|:---------------------:|
+  | INTEGER | TEXT | TEXT     | INTEGER               |
+  † _unless there are multiple owners per restaurant, in which case there would need to be an additional "helper" table to store that relationship_
+
+  ##### Owners  
+  | id      | name |
+  |:-------:|:----:|
+  | INTEGER | TEXT |
+
+  ##### Reviews  
+  | id      | review | customer_id | restaurant_id |
+  |:-------:|:------:|:-----------:|:-------------:|
+  | INTEGER | TEXT   | INTEGER     | INTEGER       |
